@@ -7,7 +7,7 @@ import {
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SeekerService } from './seeker.service';
 import { SeekerController } from './seeker.controller';
-import { Seeker } from './entities/Seeker.entity';
+import { Seeker } from './entities/seeker.entity';
 import { AuthMiddleware } from '../Middlewares/AuthMiddleware';
 
 @Module({
