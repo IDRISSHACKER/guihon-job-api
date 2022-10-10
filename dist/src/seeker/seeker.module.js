@@ -11,7 +11,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const seeker_service_1 = require("./seeker.service");
 const seeker_controller_1 = require("./seeker.controller");
-const Seeker_entity_1 = require("./entities/Seeker.entity");
+const seeker_entity_1 = require("./entities/seeker.entity");
 const AuthMiddleware_1 = require("../Middlewares/AuthMiddleware");
 let SeekerModule = class SeekerModule {
     configure(consumer) {
@@ -20,7 +20,7 @@ let SeekerModule = class SeekerModule {
 };
 SeekerModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([Seeker_entity_1.Seeker])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([seeker_entity_1.Seeker])],
         providers: [seeker_service_1.SeekerService],
         controllers: [seeker_controller_1.SeekerController],
     })
