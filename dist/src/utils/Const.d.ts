@@ -8,4 +8,5 @@ declare const DB_USER: string;
 declare const DB_PASS: string;
 declare const APP_PORT: number;
 declare const DB_PORT: number;
-export { UPLOAD_FOLDER, TMP_FOLDER, IDENTIFIER_SUFIX, DB_HOST, DB_NAME, DB_USER, DB_PASS, APP_PORT, DB_PORT, DB_ENGINE };
+declare const PRIVATE_KEY: string;
+export { UPLOAD_FOLDER, TMP_FOLDER, IDENTIFIER_SUFIX, DB_HOST, DB_NAME, DB_USER, DB_PASS, APP_PORT, DB_PORT, DB_ENGINE, PRIVATE_KEY, };

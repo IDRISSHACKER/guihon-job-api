@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DB_ENGINE = exports.DB_PORT = exports.APP_PORT = exports.DB_PASS = exports.DB_USER = exports.DB_NAME = exports.DB_HOST = exports.IDENTIFIER_SUFIX = exports.TMP_FOLDER = exports.UPLOAD_FOLDER = void 0;
+exports.PRIVATE_KEY = exports.DB_ENGINE = exports.DB_PORT = exports.APP_PORT = exports.DB_PASS = exports.DB_USER = exports.DB_NAME = exports.DB_HOST = exports.IDENTIFIER_SUFIX = exports.TMP_FOLDER = exports.UPLOAD_FOLDER = void 0;
 const env = require("dotenv");
 env.config();
 const IDENTIFIER_SUFIX = process.env.APP_PREFIX;
@@ -23,4 +23,6 @@ const APP_PORT = parseInt(process.env.APP_PORT);
 exports.APP_PORT = APP_PORT;
 const DB_PORT = parseInt(process.env.DB_PORT);
 exports.DB_PORT = DB_PORT;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+exports.PRIVATE_KEY = PRIVATE_KEY;
 //# sourceMappingURL=Const.js.map

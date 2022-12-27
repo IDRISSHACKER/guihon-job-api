@@ -5,5 +5,4 @@ export class AppService {
   welcomeToCinafFile(): string {
     return 'Guihon job api!';
   }
-
 }

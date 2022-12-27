@@ -17,12 +17,12 @@ const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const fs = require("fs");
 const path = require("path");
-const Const_1 = require("./utils/Const");
 const mine = require("mime-types");
 const path_1 = require("path");
 const fs_1 = require("fs");
 const util_1 = require("util");
 const logger_1 = require("./functions/logger");
+const Const_1 = require("./utils/Const");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;

@@ -8,8 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthMiddleware = void 0;
 const common_1 = require("@nestjs/common");
+const Const_1 = require("../utils/Const");
+const jwt = require("jsonwebtoken");
 let AuthMiddleware = class AuthMiddleware {
     use(req, res, next) {
+        try {
+            const token = req.header('authorization').split(' ')[1];
+            const verification = jwt.verify(token, Const_1.PRIVATE_KEY);
+        }
+        catch (err) {
+            throw new common_1.HttpException({
+                status: common_1.HttpStatus.UNAUTHORIZED,
+                error: 'Authentication required to access of these ressouces',
+            }, common_1.HttpStatus.UNAUTHORIZED);
+        }
         next();
     }
 };

@@ -9,17 +9,20 @@ import {
   Headers,
   Next,
   Ip,
+  Post,
+  Body,
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import * as fs from 'fs';
 import path = require('path');
-import { UPLOAD_FOLDER } from './utils/Const';
 import type { NextFunction, Response as ResponseType } from 'express';
 import mine = require('mime-types');
 import { join } from 'path';
 import { createReadStream, stat } from 'fs';
 import { promisify } from 'util';
 import { logger } from './functions/logger';
+import { UPLOAD_FOLDER } from './utils/Const';
+
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}

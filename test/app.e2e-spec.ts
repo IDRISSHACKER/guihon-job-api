@@ -22,7 +22,5 @@ describe('AppController (e2e)', () => {
       .expect('Cinaf file!');
   });
 
-  it('/', function () {
-
-  });
+  it('/', function () {});
 });

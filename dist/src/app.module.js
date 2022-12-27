@@ -13,23 +13,27 @@ const app_service_1 = require("./app.service");
 const multer_1 = require("@nestjs/platform-express/multer");
 const typeOrm_config_1 = require("./config/typeOrm.config");
 const Const_1 = require("./utils/Const");
-const seeker_module_1 = require("./seeker/seeker.module");
-const admin_module_1 = require("./admin/admin.module");
-const AuthMiddleware_1 = require("./Middlewares/AuthMiddleware");
+const client_module_1 = require("./client/client.module");
+const employe_module_1 = require("./employe/employe.module");
+const presence_module_1 = require("./presence/presence.module");
+const image_module_1 = require("./image/image.module");
+const AppMiddleware_1 = require("./Middlewares/AppMiddleware");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
-            .apply(AuthMiddleware_1.AuthMiddleware)
+            .apply(AppMiddleware_1.AppMiddleware)
             .forRoutes({ path: '*', method: common_1.RequestMethod.ALL });
     }
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            employe_module_1.EmployeModule,
             multer_1.MulterModule.register({ dest: Const_1.TMP_FOLDER }),
             typeOrm_config_1.ORM_CONFIG,
-            seeker_module_1.SeekerModule,
-            admin_module_1.AdminModule,
+            client_module_1.ClientModule,
+            presence_module_1.PresenceModule,
+            image_module_1.ImageModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
