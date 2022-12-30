@@ -35,6 +35,5 @@ lerna-debug.log*
 
 # File
 .env.local
-*.sqlite
 #upload folder file
 /uploads/*.*
