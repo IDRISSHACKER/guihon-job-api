@@ -10,7 +10,7 @@ import {
   Post,
   Req,
 } from '@nestjs/common';
-import { PRIVATE_KEY } from '../utils/Const';
+import {PRIVATE_KEY, TOKEN_DURATION} from '../utils/Const';
 import { EmployeService } from './employe.service';
 import { Employe } from './entities/employe.entity';
 import { LoginInterace } from '../Interfaces/Login.interace';
@@ -137,7 +137,7 @@ export class EmployeController {
           data: userData,
         },
         PRIVATE_KEY,
-        { expiresIn: '5m' },
+        { expiresIn: TOKEN_DURATION },
       );
     } else {
       throw new HttpException(

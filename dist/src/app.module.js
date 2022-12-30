@@ -18,6 +18,9 @@ const employe_module_1 = require("./employe/employe.module");
 const presence_module_1 = require("./presence/presence.module");
 const image_module_1 = require("./image/image.module");
 const AppMiddleware_1 = require("./Middlewares/AppMiddleware");
+const planing_module_1 = require("./planing/planing.module");
+const tache_module_1 = require("./tache/tache.module");
+const employetache_module_1 = require("./employetache/employetache.module");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
@@ -28,12 +31,15 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            employe_module_1.EmployeModule,
-            multer_1.MulterModule.register({ dest: Const_1.TMP_FOLDER }),
             typeOrm_config_1.ORM_CONFIG,
+            multer_1.MulterModule.register({ dest: Const_1.TMP_FOLDER }),
+            employe_module_1.EmployeModule,
             client_module_1.ClientModule,
             presence_module_1.PresenceModule,
             image_module_1.ImageModule,
+            planing_module_1.PlaningModule,
+            tache_module_1.TacheModule,
+            employetache_module_1.EmployetacheModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

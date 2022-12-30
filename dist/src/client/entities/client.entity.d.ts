@@ -1,5 +1,6 @@
 import { BaseEntity } from 'typeorm';
 import { Image } from '../../image/entities/image.entity';
+import { Planing } from "../../planing/entities/planing.entity";
 export declare class Client extends BaseEntity {
     id: string;
     nom: string;
@@ -11,4 +12,5 @@ export declare class Client extends BaseEntity {
     updated_at: Date;
     created_at: Date;
     images: Image[];
+    planing: Planing;
 }

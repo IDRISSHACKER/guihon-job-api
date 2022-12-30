@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Client = void 0;
 const typeorm_1 = require("typeorm");
 const image_entity_1 = require("../../image/entities/image.entity");
+const planing_entity_1 = require("../../planing/entities/planing.entity");
 let Client = class Client extends typeorm_1.BaseEntity {
 };
 __decorate([
@@ -62,6 +63,11 @@ __decorate([
     (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], Client.prototype, "images", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => planing_entity_1.Planing, (planing) => planing.client),
+    (0, typeorm_1.JoinTable)(),
+    __metadata("design:type", planing_entity_1.Planing)
+], Client.prototype, "planing", void 0);
 Client = __decorate([
     (0, typeorm_1.Entity)()
 ], Client);

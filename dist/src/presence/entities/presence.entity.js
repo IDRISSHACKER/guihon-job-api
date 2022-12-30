@@ -30,19 +30,11 @@ __decorate([
     __metadata("design:type", Boolean)
 ], Presence.prototype, "ended", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)({
-        type: 'datetime',
-        default: () => 'CURRENT_TIMESTAMP',
-        onUpdate: 'CURRENT_TIMESTAMP',
-    }),
+    (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
 ], Presence.prototype, "updated_at", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({
-        type: 'datetime',
-        default: () => 'CURRENT_TIMESTAMP',
-        onUpdate: 'NO ACTION',
-    }),
+    (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], Presence.prototype, "created_at", void 0);
 __decorate([

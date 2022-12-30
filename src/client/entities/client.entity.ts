@@ -7,9 +7,10 @@ import {
   BaseEntity,
   CreateDateColumn,
   OneToMany,
-  JoinTable,
+  JoinTable, OneToOne,
 } from 'typeorm';
 import { Image } from '../../image/entities/image.entity';
+import {Planing} from "../../planing/entities/planing.entity";
 
 @Entity()
 export class Client extends BaseEntity {
@@ -50,4 +51,8 @@ export class Client extends BaseEntity {
   @OneToMany(() => Image, (image) => image.client)
   @JoinTable()
   images: Image[];
+
+  @OneToOne(() => Planing, (planing) => planing.client)
+  @JoinTable()
+  planing: Planing;
 }

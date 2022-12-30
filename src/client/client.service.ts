@@ -14,7 +14,7 @@ export class ClientService {
     private readonly imageService: ImageService,
   ) {}
 
-  async setClient(client: Client): Promise<any> {
+  async setClient(client: any): Promise<any> {
     const clientSaved = await this.clientRepository.save({
       id: ulid(),
       ...client,
@@ -55,8 +55,9 @@ export class ClientService {
 
   async findOne(id: string): Promise<any> {
     const client = await this.clientRepository.findOneBy({ id });
-    const clientId = client.id;
-    const clientImage = await this.imageService.findById(clientId);
+
+
+    const clientImage = await this.imageService.findById(client.id);
 
     return {
       ...client,

@@ -11,6 +11,7 @@ const DB_PASS = process.env.DB_PASS;
 const APP_PORT = parseInt(process.env.APP_PORT);
 const DB_PORT = parseInt(process.env.DB_PORT);
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const TOKEN_DURATION = process.env.TOKEN_DURATION
 
 export {
   UPLOAD_FOLDER,
@@ -24,4 +25,5 @@ export {
   DB_PORT,
   DB_ENGINE,
   PRIVATE_KEY,
+  TOKEN_DURATION
 };

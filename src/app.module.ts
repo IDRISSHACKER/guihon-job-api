@@ -12,18 +12,24 @@ import { TMP_FOLDER } from './utils/Const';
 import { ClientModule } from './client/client.module';
 import { EmployeModule } from './employe/employe.module';
 import { PresenceModule } from './presence/presence.module';
-import { AuthMiddleware } from './Middlewares/AuthMiddleware';
 import { ImageModule } from './image/image.module';
 import { AppMiddleware } from './Middlewares/AppMiddleware';
+import {PlaningModule} from "./planing/planing.module";
+import {TacheModule} from "./tache/tache.module";
+import {EmployetacheModule} from "./employetache/employetache.module";
 
 @Module({
   imports: [
-    EmployeModule,
-    MulterModule.register({ dest: TMP_FOLDER }),
     ORM_CONFIG,
+    MulterModule.register({ dest: TMP_FOLDER }),
+
+    EmployeModule,
     ClientModule,
     PresenceModule,
     ImageModule,
+    PlaningModule,
+    TacheModule,
+    EmployetacheModule
   ],
   controllers: [AppController],
   providers: [AppService],

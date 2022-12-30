@@ -92,7 +92,7 @@ let EmployeController = class EmployeController {
             };
             return await jwt.sign({
                 data: userData,
-            }, Const_1.PRIVATE_KEY, { expiresIn: '5m' });
+            }, Const_1.PRIVATE_KEY, { expiresIn: Const_1.TOKEN_DURATION });
         }
         else {
             throw new common_1.HttpException({

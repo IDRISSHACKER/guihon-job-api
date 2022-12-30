@@ -25,18 +25,10 @@ export class Presence extends BaseEntity {
   })
   ended?: boolean;
 
-  @UpdateDateColumn({
-    type: 'datetime',
-    default: () => 'CURRENT_TIMESTAMP',
-    onUpdate: 'CURRENT_TIMESTAMP',
-  })
+  @UpdateDateColumn()
   updated_at: Date;
 
-  @CreateDateColumn({
-    type: 'datetime',
-    default: () => 'CURRENT_TIMESTAMP',
-    onUpdate: 'NO ACTION',
-  })
+  @CreateDateColumn()
   created_at: Date;
 
   @ManyToOne(() => Employe, (employe) => employe.presences, {

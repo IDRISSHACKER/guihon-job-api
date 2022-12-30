@@ -47,8 +47,7 @@ let ClientService = class ClientService {
     }
     async findOne(id) {
         const client = await this.clientRepository.findOneBy({ id });
-        const clientId = client.id;
-        const clientImage = await this.imageService.findById(clientId);
+        const clientImage = await this.imageService.findById(client.id);
         return Object.assign(Object.assign({}, client), { images: clientImage !== null ? clientImage : [] });
     }
     async remove(id) {
