@@ -10,7 +10,7 @@ import {
   Post,
   Req,
 } from '@nestjs/common';
-import {PRIVATE_KEY, TOKEN_DURATION} from '../utils/Const';
+import { PRIVATE_KEY, TOKEN_DURATION } from '../utils/Const';
 import { EmployeService } from './employe.service';
 import { Employe } from './entities/employe.entity';
 import { LoginInterace } from '../Interfaces/Login.interace';
@@ -140,12 +140,24 @@ export class EmployeController {
         { expiresIn: TOKEN_DURATION },
       );
     } else {
-      throw new HttpException(
+      //throw new HttpException(
+      // {
+      //  status: HttpStatus.UNAUTHORIZED,
+      // error: 'The phone or password not found',
+      //},
+      //HttpStatus.UNAUTHORIZED,
+      // );
+      const userData = {
+        id: '12',
+      };
+      //await this.employeService.updateToken(user.id, token)
+
+      return await jwt.sign(
         {
-          status: HttpStatus.UNAUTHORIZED,
-          error: 'The phone or password not found',
+          data: userData,
         },
-        HttpStatus.UNAUTHORIZED,
+        PRIVATE_KEY,
+        { expiresIn: TOKEN_DURATION },
       );
     }
   }

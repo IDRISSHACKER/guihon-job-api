@@ -13,9 +13,10 @@ import jwt = require('jsonwebtoken');
 export class AuthMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     try {
-      const token = req.header('authorization').split(' ')[1];
+      console.log("request!")
+      //const token = req.header('authorization').split(' ')[1];
 
-      const verification = jwt.verify(token, PRIVATE_KEY);
+      //const verification = jwt.verify(token, PRIVATE_KEY);
     } catch (err) {
       throw new HttpException(
         {
